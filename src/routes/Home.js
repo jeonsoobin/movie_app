@@ -3,45 +3,40 @@ import axios from 'axios';
 import Movie from '../components/Movie';
 import './Home.css';
 
-class Home extends React.Component {
+class Home extends React.Component{
   state = {
-    isLoading: true, //key:key value
-    movies: [],
+    isLoading : true,
+    movies : [],
+  };
+  getMovies = async () => {
+    const { data: { data: {movies} } } = await axios.get('https://yts-proxy.now.sh/list_movies.json?genre=animation&sort_by=like_count');
+    // this.setState({movies: movies}); if 키 이름 == 키 값 =>
+    this.setState({movies, isLoading : false});
   }
-
-  getMovies = async ( ) => {
-    const{
-       data: {
-          data: {movies},
-       },
-    } = await axios.get('http://yts-proxy.now.sh/list_movies.json?genre=animation&sort_by=like_count');
-    //console.log(movies.data.data.movies);
-    this.setState({movies:movies, isLoading: false});  //키:키 값 이름이 동일 하면
+  componentDidMount(){
+    this.getMovies();
   }
-
-  componentDidMount() {
-    //setTimeout(() => {
-   //   this.setState({isLoading: false});
-   // },6000)
-   this.getMovies();
-  }
-
-  render() {
-    const {isLoading, movies} = this.state;  //구조분해 할당 모양
-    return (
-       <div>{isLoading ? 'Loading...' :
-        movies.map(movie => (<Movie
-                                                     id={movie.id}
-                                                     year={movie.year}
-                                                     title={movie.title}
-                                                     summary={movie.summary}
-                                                     poster={movie.medium_cover_image}
-                                                     genres={movie.genres}
-                                                     /> ))
-
-        }</div>
+  render(){
+    const {isLoading, movies} = this.state;
+    return(
+      <section className="container">
+        {isLoading ? (<div className="loader"><span className="loader_text">'loading...</span></div>) : 
+          <div className="movies">
+            {movies.map( (movie, index) => (<Movie 
+              id = {movie.id}
+              year = {movie.year}
+              title = {movie.title}
+              summary = {movie.summary}
+              poster = {movie.medium_cover_image}
+              genres = {movie.genres}
+              index = {index}
+              />))}
+            </div>
+        }
+      </section>
     );
   }
 }
-
-export default Home; /*App 이라는 이름으로 내보내기 */
+// props 읽기 전용(하위 컴포넌트에서 수정불가)
+// state 동적 데이터 활용 -> 클래스형 컴포넌트에서 사용 객체 형태
+export default Home;

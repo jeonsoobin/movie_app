@@ -1,14 +1,12 @@
-import React from 'react';
-import './About.css';
+import React from 'react'
+import './About.css'
 
-function About(props) {
-    console.log(props)
+export default function About(props) {
+    console.log(props);
     return (
         <div className="about_container">
             <span>"A javascript library for building user interfaces"</span>
-            <span>- React -</span>
+            <span>- react -</span>
         </div>
     )
 }
-
-export default About

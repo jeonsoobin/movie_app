@@ -1,21 +1,20 @@
-import React from 'react'
-import './App.css';
+import React from 'react';
 import {HashRouter, Route} from 'react-router-dom';
-
 import Home from './routes/Home';
 import About from './routes/About';
 import Navigation from './components/Navigation';
-import Detail from './routes/Detail';
+import Detail from './components/Detail';
+import './App.css';
 
 function App() {
-  return  (
+  return (
     <HashRouter>
-        <Navigation />
-        <Route path="/" exact={true} component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/movie_detail" component={Detail} />
+      <Navigation />
+      <Route path="/" exact="true" component={Home} />
+      <Route path="/about" component={About} />
+      <Route path="/Detail" component={Detail} />
     </HashRouter>
-  );
+  )
 }
 
 export default App

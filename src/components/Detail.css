@@ -1,0 +1,2 @@
+#root>.movie_detail{display: flex; justify-content: center; align-items: center; width: 100%; height: 100%; padding-top: 60px;}
+#root>.movie_detail .movie_box{width: 80%; } 
