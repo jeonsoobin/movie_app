@@ -2,6 +2,13 @@
 
 # dependencies
 /node_modules
+/script
+/수업1
+/수업2
+/수업3
+/수업4
+/수업
+/영화앱 준비
 /.pnp
 .pnp.js
 

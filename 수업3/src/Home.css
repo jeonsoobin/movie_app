@@ -1,8 +1,0 @@
-.container{height: 100%; display: flex; justify-content: center;}
-.loader{width: 100vw; height: 100vh; display: flex; justify-content: center; align-items: center;}
-.loader .loader_text{}
-.movies{display: grid; grid-template-columns: repeat(2, minmax(400px, 1fr)); grid-gap: 100px; padding: 70px 50px 50px; width: 80%;}
-
-@media all and (max-width : 767px) {
-    .movies{grid-template-columns: 1fr; width: 100%;}
-}
