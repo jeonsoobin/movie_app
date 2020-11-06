@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체</title>
+    <script>
+     //   객체 :변수는 데이터값을 하나 밖에 저장 못하지만, 객체는 
+     //   데이터값을 필요한 대로 만들어서 사용 할 수 있다.
+     //   var변수 = {name:홍길동, age:20, nationality:'한국'};
+    //    props 객체 = {propsName: "macaron", propsName2:true , propsName3:Array(6)}
+//
+    //    객체의 속성(Properties)은 객체의 속성값을 저장하는 프로퍼티와 객체의 함수 메서드로 구성된다.
+    //    object.name
+    //    object.printout()
+    //    var object ={
+    //        프로퍼티 :값//
+    //        name:홍길동,
+    //        age:20,
+    //        nationality: '한국' ,
+    //        매서드: function(){
+//
+    //        },
+    //        printOut: function(){
+     //           매서드
+     //       }
+     //   }
+
+     //   var변수={
+    //        프로퍼티 :값
+   //         name:홍길동,
+     //       age:20,
+     //       nationality: '한국' ,
+     //       매서드 : function(){
+//
+     //       },
+     //       printOut:function(){
+    //            매서드
+    //        }
+    //    }
+
+
+    //사용자 정의의 객체, 객체 리터럴(Object literal)
+    var info = {
+        subject: 'css' ,
+        credict: 1,
+        printOut : function(){
+            return info.subject + ' , ' +info.credict + '학점' ;
+        }
+    };
+
+    console.log(info.subject);
+    console.log(info.credict);
+    console.log(info.printOut());
+
+    info.days = 20; //객체 속성 추가
+    console.log(info.days);
+
+    delete info.credict; //속성삭제
+    console.log(info.credict);
+    </script>
+
+
+
+</head>
+<body>
+    
+</body>
+</html>
